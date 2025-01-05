@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f5f1;
+    text-align: center;
+    color: #333;
+}
+
+.game-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    margin: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #2d6a4f;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #1b4332;
+    margin-top: 5px;
+}
+
+.game-board {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    align-items: flex-start;
+    gap: 250px; /* Увеличено пространство между контейнерами и отходами, чтобы создать большое пространство в центре */
+}
+
+.bins {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+    height: 100%;
+}
+
+.bin {
+    width: 200px;
+    height: 160px;
+    background-color: #e5e5e5;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.bin:hover {
+    background-color: #d3d3d3;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.15);
+}
+
+.bin-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4d4d4d;
+}
+
+#items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 60px; /* Увеличено пространство между отходами */
+}
+
+.item-box {
+    width: 180px;
+    height: 80px;
+    background-color: #ffad33;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+.item-box:hover {
+    background-color: #ff9500;
+}
+
+.item-content {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.controls {
+    margin: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+footer {
+    font-size: 1rem;
+    color: #4d4d4d;
+    margin-bottom: 20px;
+}
+
+/* Сообщение о победе */
+.hidden {
+    display: none;
+}
+
+#win-message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #2d6a4f;
+}
+
+#restart-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    background-color: #1b4332;
+}
+
+/* Анимация исчезновения */
+.fade-out {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s, transform 0.3s ease-in-out; /* Уменьшено время для плавности */
+}

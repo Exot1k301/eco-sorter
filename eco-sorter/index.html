@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эко-сортировщик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Эко-сортировщик</h1>
+            <p>Перетащи отходы в правильный контейнер!</p>
+        </header>
+
+        <div class="game-board">
+            <!-- Контейнеры для сортировки отходов -->
+            <div class="bins">
+                <div id="paper-bin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="bin-label">Бумага</div>
+                </div>
+                <div id="cardboard-bin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="bin-label">Картон</div>
+                </div>
+                <div id="glass-bin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="bin-label">Стекло</div>
+                </div>
+                <div id="magazines-bin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="bin-label">Журналы</div>
+                </div>
+                <div id="plastic-bin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="bin-label">Пластик</div>
+                </div>
+            </div>
+
+            <!-- Элементы для сортировки справа -->
+            <div id="items-container">
+                <div class="item-box" id="newspaper-item" draggable="true" ondragstart="drag(event)">
+                    <div class="item-content">Газета</div>
+                </div>
+                <div class="item-box" id="cardboard-box-item" draggable="true" ondragstart="drag(event)">
+                    <div class="item-content">Коробка</div>
+                </div>
+                <div class="item-box" id="glass-bottle-item" draggable="true" ondragstart="drag(event)">
+                    <div class="item-content">Стеклянная Бутылка</div>
+                </div>
+                <div class="item-box" id="magazines-item" draggable="true" ondragstart="drag(event)">
+                    <div class="item-content">Журнал</div>
+                </div>
+                <div class="item-box" id="plastic-bottle-item" draggable="true" ondragstart="drag(event)">
+                    <div class="item-content">Бутылка ПЭТ</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p>Очки: <span id="score">0</span></p>
+        </div>
+
+        <!-- Сообщение и кнопка рестарта -->
+        <div id="win-message" class="hidden">
+            <h2>Ты молодец!</h2>
+            <button id="restart-button" onclick="restartGame()">Рестарт</button>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Экологическая игра</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
